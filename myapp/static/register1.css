@@ -1,80 +1,95 @@
-/* register1.css */
-
 body {
-  background: linear-gradient(to right, #d2f8d2, #b8e6ca);
-  font-family: "Jost", sans-serif;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Fondo profesional tipo empresa */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .register-container {
-  max-width: 440px;
-  margin: 80px auto;
-  background: #ffffff;
-  padding: 40px 50px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  animation: fadeIn 0.8s ease-in-out;
+  background-color: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
 }
 
-h2 {
+.register-container h2 {
   text-align: center;
-  color: #2e4d4d;
-  margin-bottom: 30px;
-  font-weight: 700;
-  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
 }
 
 form label {
   display: block;
-  margin-bottom: 6px;
-  color: #444;
-  font-weight: 500;
+  margin-top: 1rem;
+  color: #2c3e50;
+  font-weight: bold;
 }
 
 form input {
   width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 20px;
-  border: 1px solid #b0d7c7;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 15px;
-  transition: all 0.3s ease;
-  background-color: #f4fdfa;
+  box-sizing: border-box;
 }
 
 form input:focus {
-  border-color: #2f684a;
-  box-shadow: 0 0 0 2px rgba(47, 104, 74, 0.2);
   outline: none;
+  border-color: #74ebd5;
+  box-shadow: 0 0 6px #74ebd5;
 }
 
-button[type="submit"] {
-  width: 100%;
-  padding: 14px;
-  background: #3a6351;
-  color: #ffffff;
+.form-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
   border: none;
   border-radius: 8px;
-  font-size: 17px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 16px;
   font-weight: bold;
-  letter-spacing: 0.5px;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
-  background: #2e4f41;
+.submit-button:hover {
+  background-color: #45a049;
 }
 
-/* Optional: simple fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.cancel-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  flex: 1;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #c0392b;
 }

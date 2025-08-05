@@ -22,7 +22,7 @@
       <div class="alert-container">
         {% for message in messages %}
           <div class="custom-alert {{ message.tags|default:'info' }}">
-            <img src="{% static 'warning-icon.png' %}" alt="Advertencia" class="alert-icon">
+            <img src="{% static 'images.png' %}" alt="Advertencia" class="alert-icon">
             <span>{{ message }}</span>
           </div>
         {% endfor %}
@@ -40,9 +40,3 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'login.css' %}">
 {% endblock %}
-
-
-
-
-
-

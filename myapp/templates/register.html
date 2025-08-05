@@ -25,7 +25,10 @@
     <label for="id_password">Contraseña:</label>
     {{ form.password }}
 
-    <button type="submit">Registrar</button>
+    <div class="form-buttons">
+      <button type="submit">Registrar</button>
+      <a href="{% url 'login_view' %}" class="cancel-button">Cancelar</a>
+    </div>
   </form>
 </div>
 {% endblock %}

@@ -7,6 +7,14 @@ Este es un mini proyecto integral donde desarrollamos una aplicación CRUD con D
 ---
 
 ## Integrantes del equipo y roles Scrum
+| Nombre            |    Rol Scrum               |
+|-------------------|  --------------------------|
+| Fernando tadeo    |   Scrum Master             |
+| Fernando Tadeo    |   Developer FrontEnd       |
+| Dayana Carrión    |   Developer BackEnd        |
+| Diego Galiano     |   Developer BackEnd        |
+
+---
 
 
 ## Instalación y ejecución del proyecto
@@ -29,7 +37,7 @@ Este es un mini proyecto integral donde desarrollamos una aplicación CRUD con D
   ```
 ## Evidencias de Scrum
 - Desarrolado en TRELLO:
-
+https://trello.com/b/T5FTxlmD/contro-de-estudiantes
 
 ## Estrcutura del Repositorio:
 

@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Cambia si tu rama principal tiene otro nombre
+      - funcionalidad
+      - estilos
   pull_request:
     branches:
       - main

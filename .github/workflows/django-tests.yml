@@ -3,7 +3,10 @@ name: Django Tests
 on:
   push:
     branches:
-      - main  # Cambia si tu rama principal tiene otro nombre
+      - main
+      - funcionalidad
+      - estilos
+       
   pull_request:
     branches:
       - main
@@ -34,4 +37,3 @@ jobs:
       - name: Run tests
         run: |
           python manage.py test
-

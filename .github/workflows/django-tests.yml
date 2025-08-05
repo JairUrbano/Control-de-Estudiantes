@@ -3,8 +3,8 @@ name: Django Tests
 on:
   push:
     branches:
-      - main  # Cambia si tu rama principal tiene otro nombre
-      - especialidad
+      - main
+      - funcionalidad
       - estilos
        
   pull_request:

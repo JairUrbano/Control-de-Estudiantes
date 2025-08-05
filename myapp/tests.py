@@ -66,7 +66,6 @@ class EstudianteTestCase(TestCase):
         self.assertIn('ciclo', form.errors)
         self.assertIn('correo', form.errors)
 
-
     # Validar que el correo tenga formato válido
     def test_correo_invalido(self):
         data = {

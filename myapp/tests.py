@@ -49,31 +49,69 @@ class EstudianteTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Estudiante.objects.filter(id=self.estudiante.id).exists())
 
-    #####Error siempre va salir error por que esta hecho para eso
-
-    def test_ciclo_no_numerico(self):
+    # Validar que no se permita dejar campos vacíos
+    def test_todos_los_campos_obligatorios(self):
         data = {
-            'nombre': 'Lucía Torres',
-            'carrera': 'Derecho',
-            'ciclo': 'tercero',
-            'correo': 'lucia@example.com'
+            'nombre': '',
+            'carrera': '',
+            'ciclo': '',
+            'correo': ''
         }
         response = self.client.post(reverse('crear_estudiante'), data)
-        self.assertNotEqual(response.status_code, 302)
-        self.assertEqual(Estudiante.objects.count(), 1)
- 
-#valido
- 
-    def test_ciclo_numerico_valido(self):
+        self.assertEqual(response.status_code, 200)
+        form = response.context['form']
+        self.assertTrue(form.errors)
+        self.assertIn('nombre', form.errors)
+        self.assertIn('carrera', form.errors)
+        self.assertIn('ciclo', form.errors)
+        self.assertIn('correo', form.errors)
+
+
+    # Validar que el correo tenga formato válido
+    def test_correo_invalido(self):
         data = {
-        'nombre': 'Luis Soto',
-        'carrera': 'Psicología',
-        'ciclo': '4', 
-        'correo': 'luis@example.com'
+            'nombre': 'Ana',
+            'carrera': 'Contabilidad',
+            'ciclo': '5',
+            'correo': 'correo-invalido'
         }
         response = self.client.post(reverse('crear_estudiante'), data)
-        self.assertEqual(response.status_code, 302) 
-        self.assertEqual(Estudiante.objects.count(), 2)
+        self.assertEqual(response.status_code, 200)
+        form = response.context['form']
+        self.assertTrue(form.errors)
+        self.assertIn('correo', form.errors)
 
+    #Validar que el campo nombre no acepte numeros
+    def test_nombre_no_debe_contener_numeros(self):
+        data = {
+            'nombre': 'Ana123',
+            'carrera': 'Contabilidad',
+            'ciclo': '5',
+            'correo': 'ana123@example.com'
+        }
+        response = self.client.post(reverse('crear_estudiante'), data)
+        self.assertEqual(response.status_code, 200)
+        form = response.context['form']
+        self.assertTrue(form.errors)
+        self.assertIn('nombre', form.errors)
 
+    #Validar que el correo sea único
+    def test_correo_unico(self):
+        Estudiante.objects.create(
+            nombre='Carlos',
+            carrera='Sistemas',
+            ciclo='2',
+            correo='repetido@example.com'
+        )
 
+        data = {
+            'nombre': 'Otro',
+            'carrera': 'Sistemas',
+            'ciclo': '3',
+            'correo': 'repetido@example.com'
+        }
+        response = self.client.post(reverse('crear_estudiante'), data)
+        self.assertEqual(response.status_code, 200)
+        form = response.context['form']
+        self.assertTrue(form.errors)
+        self.assertIn('correo', form.errors)

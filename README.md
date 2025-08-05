@@ -25,6 +25,7 @@ Este es un mini proyecto integral donde desarrollamos una aplicación CRUD utili
 - Django 4.x
 - Git
 - pip
+- trello https://trello.com/b/T5FTxlmD/contro-de-estudiantes
 
 ---
 

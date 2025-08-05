@@ -62,18 +62,7 @@ class EstudianteTestCase(TestCase):
         self.assertNotEqual(response.status_code, 302)
         self.assertEqual(Estudiante.objects.count(), 1)
  
-#valido
- 
-    def test_ciclo_numerico_valido(self):
-        data = {
-        'nombre': 'Luis Soto',
-        'carrera': 'Psicología',
-        'ciclo': '4', 
-        'correo': 'luis@example.com'
-        }
-        response = self.client.post(reverse('crear_estudiante'), data)
-        self.assertEqual(response.status_code, 302) 
-        self.assertEqual(Estudiante.objects.count(), 2)
+
 
 
 

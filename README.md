@@ -8,14 +8,6 @@ Este es un mini proyecto integral donde desarrollamos una aplicación CRUD con D
 
 ## Integrantes del equipo y roles Scrum
 
-| Nombre            |    Rol Scrum               |
-|-------------------|  --------------------------|
-| Jorge Huillca     |   PO y Scrum Master        |
-| Fernando Julca    |   Developer BackEnd        |
-| Dayana Carrión    |   Developer FrontEnd       |
-| Diego Galiano     | Developer FrontEnd         |
-
----
 
 ## Instalación y ejecución del proyecto
 
@@ -37,7 +29,7 @@ Este es un mini proyecto integral donde desarrollamos una aplicación CRUD con D
   ```
 ## Evidencias de Scrum
 - Desarrolado en TRELLO:
-https://trello.com/invite/b/687e68fb88aab73bfebe3f70/ATTI7159094debcb426c4b3179655b6800cbB52F11BD/sprint-grupo-1
+
 
 ## Estrcutura del Repositorio:
 

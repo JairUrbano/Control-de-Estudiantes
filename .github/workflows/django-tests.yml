@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main  # Cambia si tu rama principal tiene otro nombre
-      - fernando/funcionalidad
-      - fernando/prueba
+      - 
+      - 
   pull_request:
     branches:
       - main
